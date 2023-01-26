@@ -126,7 +126,7 @@ function newGOL() {
   
     // Now let's make this new generation 
     // the current generation and put the 
-    // old one aside (->"temp" )
+    // old one aside (-> temp )
 
     transition = nextMatrix - matrix
     let temp = matrix;

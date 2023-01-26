@@ -71,4 +71,6 @@ function newBoard(board, nextBoard) {
     let oldBoard = board;
     board = nextBoard;
     nextBoard = oldBoard;
+
+    return 
 }
