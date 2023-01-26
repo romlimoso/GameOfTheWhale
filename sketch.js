@@ -64,7 +64,7 @@ function draw() {
   if(posX < 0) posX = width;
   if(posY < 0) posY = height;
   
-  // move, rotate and draw arrow
+  // move, rotate and draw whale
   push();
   
   translate(posX, posY);
@@ -74,7 +74,7 @@ function draw() {
   image(img, 0, 0, 80, 150)
   pop();
 
-  collusion()
+  collision()
 
 /*   // visualize polar coordinates we're using to move
   let circleRadius = speed.value() * 5;
