@@ -11,8 +11,8 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 12px;    
   }
-
 
   
   #score {
@@ -20,10 +20,16 @@ html, body {
     font-size: 50px;
   }
 
-  #oneDot {
-    background-color: #4CAF50;
+
+  #gameModes {
+    display: flex;
+    flex-direction: row;
+  }  
+
+  #oneDot, #clearField, #randomPlankton, #startGame{
+    background-color: rgb(69, 201, 203);
     border: none;
-    color: white;
+    color: rgb(7, 73, 82);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;

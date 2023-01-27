@@ -6,14 +6,18 @@ let speed
 let img
 let bg
 
+let width = 1500
+let height = 800
+
 function preload(){
-	img = loadImage('whale3.png')
-  bg = loadImage('blue-blurred.png')
+	img = loadImage('whale2.png')
+  img2 = loadImage('whale3.png')
+  bg = loadImage('ocean_bg2.png')
 
  }
 
 function setup() {
-    const playingField = createCanvas(1500, 800);
+    const playingField = createCanvas(width, height);
     playingField.parent("game")
     let mouseX
     let mouseY
@@ -66,7 +70,6 @@ function draw() {
   
   // move, rotate and draw whale
   push();
-  
   translate(posX, posY);
   rotate(rotation()+PI/2);
   //rect(0, 0, 80, 20);
@@ -76,21 +79,4 @@ function draw() {
 
   collision()
 
-/*   // visualize polar coordinates we're using to move
-  let circleRadius = speed.value() * 5;
-  push();
-  translate(width - 50, 50);
-  stroke(255);
-  noFill();
-
-  // draw circle
-  circle(0, 0, circleRadius * 2);
-  
-  // draw radians
-  let circX = cos(rotation()) * circleRadius;
-  let circY = sin(rotation()) * circleRadius;
-  fill(0);
-  circle(circX, circY, circleRadius * 0.4);
-  line(0, 0, circX, circY);
-  pop(); */
 }

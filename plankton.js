@@ -13,11 +13,11 @@ function setupGOL(){
 /// I set up the grid fo the Game of Life, covering the whole canvas.
     
     // w is the width of one column or row
-    w = 12;
+    w = 15;
 
     // Calculate the resulting grid
-    columns = floor(width / w);
-    rows = floor(height / w);
+    columns = floor(width/w);
+    rows = floor(height/w);
 
     // Create matrix rows x columns
     matrix = new Array(columns);
@@ -43,13 +43,23 @@ function drawGOL(){
 
     //background(0, 92, 250);
     
-    image(bg, width/2, height/2, 1500, 800)
+    image(bg, width/2, height/2  )  // image is 378x1920 -> 1500x7619 top border around 3750
+    bg.resize(width, height)
     //background(bg)
     
     
     generate();
-      
-    if ( state === 1 && mouseIsPressed === true) {
+    
+    if ( state === 0 && mouseIsPressed === true) {
+      for (let i=0; i < columns; i++){
+        for (let j=0; j < rows; j++ ) {
+            matrix[i][j] = 0
+            //console.log(board1[i][j])
+        }
+    }
+    }
+
+    if ( state === 2 && mouseIsPressed === true) {
       matrix[floor(mouseX/w)][floor(mouseY/w)] = 1
       matrix[floor(mouseX/w)][floor(mouseY/w)+1] = 1
       matrix[floor(mouseX/w)+2][floor(mouseY/w)+1] = 1
@@ -59,9 +69,11 @@ function drawGOL(){
     for ( let i = 0; i < columns-1; i++) {
       for ( let j = 0; j < rows-1; j++) {
         if (matrix[i][j] == 1){ 
+
             fill(2, 200, 255, 60)
             stroke(2, 200, 9*j*i*w/height, 1); 
             ellipse(i * w, j * w, w*2, w*2)
+
             fill(2, 230, 9*j*i*w/height)
             ellipse(i * w, j * w, w/2, w/2)
             
@@ -75,9 +87,12 @@ function drawGOL(){
     }
 
 
+
 // reset board when mouse is pressed
 function mousePressed() {
-    if (state != 1) {newGOL();}
+    if (state === 1) {
+      newGOL();
+      state = 10}
 }
  
 // Fill board randomly
