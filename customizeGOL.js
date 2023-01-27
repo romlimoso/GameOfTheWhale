@@ -10,7 +10,7 @@ function clear(){
 
 
 const randomPlankton = document.querySelector("#randomPlankton")
-randomPlankton.addEventListener("click", random())  
+randomPlankton.addEventListener("click", random)  
 
 function random(){
     state = 1
@@ -19,19 +19,10 @@ function random(){
 
 
 const addPlankton = document.querySelector("#oneDot")
-addPlankton.addEventListener("click", counter())
+addPlankton.addEventListener("click", counter)
 
 function counter(){
     state = 2
-}
-
-const startGame = document.querySelector("#startGame")
-startGame.addEventListener("click", gameInit())
-
-function gameInit(){
-    state = 3
-    const countdown = document.getElementById("countdown")
-    points.innerHTML = `Countdown: ${score}`
 }
 
 
